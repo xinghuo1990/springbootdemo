@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xh.dao.UserDao">
+    <resultMap id="user" type="com.xh.dto.UserDto">
+        <result property="name" column="name" jdbcType="VARCHAR"></result>
+        <result property="sex" column="sex" jdbcType="VARCHAR"></result>
+    </resultMap>
+    <select id="queryUser" resultMap="user" parameterType="com.xh.dao.UserDao">
+        select u.name from user_test u where u.name = #{name}
+    </select>
+</mapper>
