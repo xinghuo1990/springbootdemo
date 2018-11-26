@@ -38,7 +38,6 @@ public class RocketMqTest {
         Message message = null;
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
-        message = new Message();
         for (int i = 0; i < 10; i++) {
             message= new Message("0TNZQ5T6X9YTWPI","tag",("rocketmq第"+(i+1)+"测试").getBytes());
             SendResult sendResult = producer.send(message);
